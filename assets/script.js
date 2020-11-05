@@ -13,4 +13,10 @@ $("#currentDay").text(todaY);
 var currentHour = DateTime.local().hour;
 console.log(currentHour);
 
+// for each loop to only get number from timeBlock class (id)
+$(".timeBlock").each(function() {
+var hourBlock = parseInt($(this).attr("id").replace(/[^\d]/g, ''), 10);
+console.log(hourBlock);
+});
+
 // DateTime.local().toFormat("HH 'hours and' mm 'minutes'"); //=> '20 hours and 55 minutes'
