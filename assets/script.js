@@ -17,6 +17,17 @@ console.log(currentHour);
 $(".timeBlock").each(function() {
 var hourBlock = parseInt($(this).attr("id").replace(/[^\d]/g, ''), 10);
 console.log(hourBlock);
+
+// Apply future, present, or past css if:
+if (hourBlock > currentHour) {
+    $(this).addClass("future");
+}
+if (hourBlock === currentHour) {
+    $(this).addClass("present");
+}
+if (hourBlock < currentHour) {
+    $(this).addClass("past");
+}
 });
 
 // DateTime.local().toFormat("HH 'hours and' mm 'minutes'"); //=> '20 hours and 55 minutes'
